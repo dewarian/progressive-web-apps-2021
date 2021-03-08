@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "@cmda-minor progressive-web-app subject. Learning about server-side-rendering and the critical render path",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -22,5 +22,12 @@
   "bugs": {
     "url": "https://github.com/dewarian/progressive-web-apps-2021/issues"
   },
-  "homepage": "https://github.com/dewarian/progressive-web-apps-2021#readme"
+  "homepage": "https://github.com/dewarian/progressive-web-apps-2021#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-google": "^0.14.0"
+  }
 }
