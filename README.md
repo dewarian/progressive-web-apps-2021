@@ -45,3 +45,13 @@ npm install
 [Kitsu api](https://kitsu.docs.apiary.io/) An JSON:API api that allows you to track upcoming anime, keep a list and more. specifically used to show current and past titles.
 
 ## CHANGE LOG
+
+**08-03-2021**
+[:see_no_evil: Setup gitignore](b0773abbc049a8015ab0b19a61e8c1ef6e7d42ad)
+[:fire: remove school boilerplate](https://github.com/dewarian/progressive-web-apps-2021/commit/65f5d11e9511ec301fcfb136f176d1e1238c9ed8)
+[:memo: Add base of readme](https://github.com/dewarian/progressive-web-apps-2021/commit/206aa586f8ef8ed85192f86f9017b384c0b34699)
+
+## RESOURCES
+
+https://shields.io/  
+https://simpleicons.org/?q=kitsu
