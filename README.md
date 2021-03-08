@@ -47,9 +47,10 @@ npm install
 ## CHANGE LOG
 
 **08-03-2021**
-[:see_no_evil: Setup gitignore](b0773abbc049a8015ab0b19a61e8c1ef6e7d42ad)
-[:fire: remove school boilerplate](https://github.com/dewarian/progressive-web-apps-2021/commit/65f5d11e9511ec301fcfb136f176d1e1238c9ed8)
-[:memo: Add base of readme](https://github.com/dewarian/progressive-web-apps-2021/commit/206aa586f8ef8ed85192f86f9017b384c0b34699)
+
+- [:see_no_evil: Setup gitignore](a53aff9d139808daf73cb38509354b0de364a469)
+- [:fire: remove school boilerplate](https://github.com/dewarian/progressive-web-apps-2021/commit/65f5d11e9511ec301fcfb136f176d1e1238c9ed8)
+- [:memo: Add base of readme](https://github.com/dewarian/progressive-web-apps-2021/commit/206aa586f8ef8ed85192f86f9017b384c0b34699)
 
 ## RESOURCES
 
