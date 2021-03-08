@@ -1,0 +1,26 @@
+{
+  "name": "hva-cmda-progressive-web-app-2021",
+  "version": "1.0.0",
+  "private": true,
+  "description": "@cmda-minor progressive-web-app subject. Learning about server-side-rendering and the critical render path",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dewarian/progressive-web-apps-2021.git"
+  },
+  "keywords": [
+    "hva",
+    "cmda-minor",
+    "node",
+    "school"
+  ],
+  "author": "Nathan Bommezijn <nathan.bommezijn@hva.nl> (https://github.com/dewarian)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dewarian/progressive-web-apps-2021/issues"
+  },
+  "homepage": "https://github.com/dewarian/progressive-web-apps-2021#readme"
+}
