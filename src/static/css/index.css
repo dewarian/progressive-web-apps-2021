@@ -2,5 +2,27 @@
 @import "reset.css";
 
 body {
-  background-color: var(--main-accent);
+  font-family: var(--font-main);
+  /* background-color: var(--main-accent); */
+  background-image: radial-gradient(#00000010 3px, #ffffff00 0px);
+  background-size: 24px 24px;
+}
+
+#logo {
+  display: flex;
+  justify-content: center;
+}
+
+#logo > img {
+  max-width: 68px;
+  filter:grayscale(1)
+}
+
+nav {
+  background: linear-gradient(to top, #ffffff25, #00000055);
+  padding: 0.5em;
+  padding-left: 2em;
+  padding-bottom: 1em;
+  border: 1px solid black;
+  margin-bottom: 0.5em;
 }

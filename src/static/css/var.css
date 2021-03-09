@@ -2,6 +2,6 @@
 
 
 :root {
-  --font-main: font-family: 'Space Mono', monospace;
+  --font-main: 'Space Mono', monospace;
   --main-accent: #FFCC00;
 }
