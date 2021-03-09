@@ -1,0 +1,6 @@
+@import "var.css";
+@import "reset.css";
+
+body {
+  background-color: var(--main-accent);
+}
