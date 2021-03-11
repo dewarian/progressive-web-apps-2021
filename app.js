@@ -1,5 +1,6 @@
-import express from "express";
-import getData from "handling-data";
+const express = require("express");
+const fetch = require("node-fetch");
+// const { getData } = require("./src/modules/handling-data");
 const app = express();
 const port = 8080;
 
@@ -16,11 +17,13 @@ const seasonYearFilter = "[seasonYear]=";
 const seasonFilter = "[season]=";
 const pageLimit = "page[limit]=20";
 const offSet = "page[offset]=";
+const url = `${baseUrl}?filter${seasonYearFilter}${year}&${seasonFilter}${season}&${pageLimit}&${offSet}${offset}`;
 
 app.get("/", async (req, res) => {
-  const dataset = await getData(
-    `${baseUrl}?filter${seasonYearFilter}${year}&${seasonFilter}${season}&${pageLimit}&${offSet}${offset}`
-  );
+  const dataset = await fetch(`https://kitsu.io/api/edge/anime`)
+    .then((rs) => rs.json())
+    .catch((err) => console.log(err));
+  console.log(dataset);
   res.render("home", {
     title: "home"
   });

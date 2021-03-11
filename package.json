@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "private": true,
   "description": "@cmda-minor progressive-web-app subject. Learning about server-side-rendering and the critical render path",
-  "type": "module",
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",

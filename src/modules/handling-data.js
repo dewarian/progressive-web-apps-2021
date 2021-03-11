@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 /**
  * @title Check module.data
  * @function
@@ -5,7 +7,7 @@
  * @param {String} test A string to check if the modular approach works properly
  * @return {String} log of test
  */
-export const datatest = (test) => {
+const datatest = (test) => {
   return console.log(`%c${test}`, "color: #ffcc00; font-weight: bold;");
 };
 /**
@@ -14,8 +16,13 @@ export const datatest = (test) => {
  * @description Data retrieval. Use getData when retrieving data from an external API.
  * @param {String} url API endpoint to call.
  */
-export const getData = async (url) => {
+const getData = async (url) => {
   return await fetch(url)
     .then((response) => response.json())
-    .catch((err) => console.log(err));
+    .catch((err) => console.log(`custom: ${err}`));
+};
+
+module.exports = {
+  datatest: datatest(),
+  getData: getData()
 };
