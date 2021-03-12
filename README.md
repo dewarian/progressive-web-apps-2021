@@ -7,8 +7,10 @@
 1. [Demo](#demo)
 1. [Description](#description)
 1. [Installation](#installation)
+1. [Packages](#packages)
 1. [Conventions](#conventions)
 1. [Ext. data](#external-data)
+1. [NPM Scripts](#scripts)
 1. [Changelog](#change-log)
 
 ## DEMO
@@ -47,6 +49,22 @@ yarn
 
 3. Open project in preferred editor and have fun 🎉
    **Extra** `npm start` to run the project in the browser.
+   _Replace npm with yarn if you prefer yarn_.
+
+## PACKAGES
+
+The node application uses a handful of packages to either render the application or to build the application to share.
+
+**Dependencies**
+Dependencies that the application needs to function.
+
+- [Express](http://expressjs.com/) A minimalistic unopinionated web framework for Node.js
+- [EJS](https://ejs.co/) 'Embedded JavaScript Templating' template language of choice.
+
+**DevDependencies**
+Dependencies used for development
+
+- []()
 
 ## CONVENTIONS
 
@@ -56,6 +74,10 @@ yarn
 ## EXTERNAL DATA
 
 [Kitsu api](https://kitsu.docs.apiary.io/) An JSON:API api that allows you to track upcoming anime, keep a list and more. specifically used to show current and past titles.
+
+## SCRIPTS
+
+The scri
 
 ## CHANGE LOG
 
