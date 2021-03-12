@@ -31,14 +31,27 @@ Goals: Optimize the Critical Rendering Path
 
 ## INSTALLATION
 
+1. Git clone the project in your preferred folder and way
+
+```ZSH
+git clone https://github.com/dewarian/progressive-web-apps-2021.git
+```
+
+2. Run the install with the preferred package manager
+
 ```ZSH
 npm install
+# or yarn
+yarn
 ```
+
+3. Open project in preferred editor and have fun 🎉
+   **Extra** `npm start` to run the project in the browser.
 
 ## CONVENTIONS
 
 - [Gitmojis](https://gitmoji.dev/)
-- Linting
+- Linting (Google format)
 
 ## EXTERNAL DATA
 
@@ -46,11 +59,16 @@ npm install
 
 ## CHANGE LOG
 
+**12-03-2021**
+
+- [Update tooling with ext. script]()
+
 **09-03-2021**
 
 - [:lipstick: Setup styling]()
 - [:wrench: Update tooling]()
 - [:bento: Setup templating]()
+- [:poop: Add API call]()
 
 **08-03-2021**
 
