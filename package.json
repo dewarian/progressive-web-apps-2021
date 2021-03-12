@@ -9,7 +9,7 @@
     "pretty": "prettier --write .",
     "lint": "eslint",
     "cleanup": "run-s lint pretty",
-    "prebuild": "rimraf ./dist && mkdirp dist",
+    "prebuild": "rimraf ./dist && mkdirp dist && cleanup",
     "build": "run-p build:**",
     "build:css": "node scripts/build-css.js"
   },
