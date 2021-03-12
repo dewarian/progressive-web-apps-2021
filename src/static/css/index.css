@@ -15,7 +15,7 @@ body {
 
 #logo > img {
   max-width: 68px;
-  filter:grayscale(1)
+  filter: grayscale(1);
 }
 
 nav {
