@@ -1,5 +1,5 @@
-import CleanCSS from "clean-css";
-import fs from "fs";
+const CleanCSS = require("clean-css");
+const fs = require("fs");
 
 const output = new CleanCSS({
   level: {
@@ -9,5 +9,5 @@ const output = new CleanCSS({
 // console.log(output.styles);
 fs.writeFile("./dist/index.css", output.styles, (err) => {
   if (err) return console.log(err);
-  console.log(`Finished minifying CSS in ${output.stats.timeSpent}`);
+  console.log(`Finished minifying CSS in ${output.stats.timeSpent}s`);
 });
