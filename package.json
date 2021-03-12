@@ -6,7 +6,9 @@
   "main": "app.js",
   "scripts": {
     "start": "nodemon app.js",
+    "pretty": "prettier --write .",
     "lint": "eslint",
+    "cleanup": "run-s lint pretty",
     "prebuild": "rimraf ./dist && mkdirp dist",
     "build": "run-p build:**",
     "build:css": "node scripts/build-css.js"
