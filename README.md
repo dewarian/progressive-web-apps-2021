@@ -8,12 +8,14 @@
 1. [Description](#description)
 1. [Installation](#installation)
 1. [Packages](#packages)
+1. [NPM Scripts](#scripts)
 1. [Conventions](#conventions)
 1. [Ext. data](#external-data)
-1. [NPM Scripts](#scripts)
 1. [Changelog](#change-log)
 
 ## DEMO
+
+[URL TO DEPLOYED VERSION](#)
 
 ## DESCRIPTION
 
@@ -60,11 +62,31 @@ Dependencies that the application needs to function.
 
 - [Express](http://expressjs.com/) A minimalistic unopinionated web framework for Node.js
 - [EJS](https://ejs.co/) 'Embedded JavaScript Templating' template language of choice.
+- [Node-fetch]() Node version of the fetch web-API.
 
 **DevDependencies**
-Dependencies used for development
+Dependencies used for development and aren't needed for the finished product.
 
-- []()
+- [Clean-CSS](https://www.npmjs.com/package/clean-css) CSS optimizer for Node.
+- [Eslint + config / plugin](https://github.com/eslint/eslint) Linting that watches code patterns, and enforces those.
+- [Mkdirp](https://www.npmjs.com/package/mkdirp) `mkdir` for Node.
+- [Nodemon](https://www.npmjs.com/package/nodemon) Package that automatically restarts node.
+- [NPM-run-all](https://www.npmjs.com/package/npm-run-all) Running scripts parallel or sequential, allows for cleaner scripts.
+- [Prettier](https://github.com/prettier/prettier) Opinionated code formatter, enforces consistent code style.
+- [rimraf](https://www.npmjs.com/package/rimraf) Node command to run `rm -rf`.
+
+## SCRIPTS
+
+The project uses a few steps to build the application or to clean the application before building.
+|Keyword|What does it do?|
+|--|--|
+|`start`|Start the application with nodemon.|
+|`pretty`|Stylizes the code for readability.|
+|`lint`|Checks the application for code style issues, adheres [google-style-guide](https://google.github.io/styleguide/jsguide.html).|
+|`cleanup`|First runs `lint` then `pretty`.|
+|`prebuild`|Deletes dist folder, creates new dist folder.|
+|`build`|Run all scripts prefixed with build:\*\* .|
+|`build:css`|Runs script in [build-css](https://github.com/dewarian/progressive-web-apps-2021/blob/master/scripts/build-css.js). Minifies and concatenates stylesheets.|
 
 ## CONVENTIONS
 
@@ -75,14 +97,15 @@ Dependencies used for development
 
 [Kitsu api](https://kitsu.docs.apiary.io/) An JSON:API api that allows you to track upcoming anime, keep a list and more. specifically used to show current and past titles.
 
-## SCRIPTS
-
-The scri
-
 ## CHANGE LOG
+
+**13-03-2021**
+
+- [Update readme based on feedback]()
 
 **12-03-2021**
 
+- [Attempt on deploying]()
 - [Update tooling with ext. script]()
 
 **09-03-2021**
