@@ -101,19 +101,19 @@ The project uses a few steps to build the application or to clean the applicatio
 
 **13-03-2021**
 
-- [Update readme based on feedback]()
+- [:memo: Update readme based on feedback](https://github.com/dewarian/progressive-web-apps-2021/commit/22c48f2f7061ce916967437ca1173a0617370d7a)
 
 **12-03-2021**
 
-- [Attempt on deploying]()
-- [Update tooling with ext. script]()
+- [:rocket: :poop: Attempt on deploying (failed)]()
+- [:wrench: Update tooling with ext. script](https://github.com/dewarian/progressive-web-apps-2021/commit/7c0a915fe29f321d3d589df83293c041d684369e)
 
 **09-03-2021**
 
-- [:lipstick: Setup styling]()
-- [:wrench: Update tooling]()
-- [:bento: Setup templating]()
-- [:poop: Add API call]()
+- [:lipstick: Setup styling](https://github.com/dewarian/progressive-web-apps-2021/commit/312b4c04809b5621dabf046acaa7473b0b4a36fa)
+- [:wrench: Update tooling](https://github.com/dewarian/progressive-web-apps-2021/commit/cb42c32c6d39c240f139f40d1fe639bcf22a3998)
+- [:bento: Setup templating](https://github.com/dewarian/progressive-web-apps-2021/commit/588e08a92d62f47d6d9c1083144d4f121ae2086c)
+- [:poop: Add API call](https://github.com/dewarian/progressive-web-apps-2021/commit/0561afd1fcb7bf6aaae7e0c84c2a50f2f9f9a149)
 
 **08-03-2021**
 
