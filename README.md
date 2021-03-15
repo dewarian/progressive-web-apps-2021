@@ -15,7 +15,7 @@
 
 ## DEMO
 
-[URL TO DEPLOYED VERSION](#)
+[HEROKU DEPLOYED](https://progressive-web-apps-2021.herokuapp.com/)
 
 ## DESCRIPTION
 
