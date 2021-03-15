@@ -1,18 +1,7 @@
 <%- include('partials/head') %>
 <%- include('partials/header') %>
 
-
-<article id="detail">
-  <section>
-    <img src="<%= info.attributes.posterImage.small %>" alt="">
-    <p><%= info.attributes.titles.en_jp %></p>
-  </section>
-  <section>
-    <p><%= info.attributes.description %></p>
-    <p><%= info.attributes.startDate %></p>
-  </section>
-<a id="button" href="/"><span>Back</span></a>
-</article>
+<%- include('partials/detailShow', { info: info}) %>
 
 
 <% include('partials/footer.ejs') %> 
