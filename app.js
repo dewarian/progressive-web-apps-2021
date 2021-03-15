@@ -25,7 +25,7 @@ const url = `${baseUrl}?filter[seasonYear]=${year}&[season]=${season}&page[limit
  */
 app.get("/", async (req, res) => {
   const dataset = await getData(url);
-  console.log(dataset.data);
+  // console.log(dataset.data);
   res.render("home", {
     pageTitle: "Kitsu Anime",
     shows: dataset
@@ -36,10 +36,12 @@ app.get("/", async (req, res) => {
  * ":id" Returns information of a specific show
  */
 app.get("/detail/:id", async (req, res) => {
-  const dataset = await getData(url);
+  const showId = req.params.id;
+  const dataset = await getData(`${baseUrl}/${showId}`);
+  console.log(dataset);
   res.render("detail", {
-    pageTitle: dataset.title,
-    info: dataset
+    pageTitle: dataset.data.attributes.titles.en_jp,
+    info: dataset.data
   });
 });
 
