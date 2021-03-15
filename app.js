@@ -15,9 +15,9 @@ app.use("/static", express.static("src/static"));
 const baseUrl = "https://kitsu.io/api/edge/anime";
 const year = 2021;
 const season = "winter";
-const pageLimit = "10";
+const pageLimit = "20";
 const offSet = "page[offset]=";
-const url = `${baseUrl}?filter[seasonYear]=${year}&[season]=${season}&page[limit]=${pageLimit}&${offSet}20`;
+const url = `${baseUrl}?filter[seasonYear]=${year}&[season]=${season}&page[limit]=${pageLimit}&${offSet}40`;
 
 /**
  * Routers
