@@ -5,7 +5,8 @@
   "description": "@cmda-minor progressive-web-app subject. Learning about server-side-rendering and the critical render path",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "pretty": "prettier --write .",
     "lint": "eslint",
     "cleanup": "run-s lint pretty",
