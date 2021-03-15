@@ -19,10 +19,10 @@ const datatest = (test) => {
 const getData = async (url) => {
   return await fetch(url)
     .then((response) => response.json())
-    .catch((err) => console.log(`custom: ${err}`));
+    .catch((err) => console.log(`\x1b[1;31m getData: \x1b[0m${err}`));
 };
 
 module.exports = {
-  datatest: datatest(),
-  getData: getData()
+  datatest: datatest,
+  getData: getData
 };
