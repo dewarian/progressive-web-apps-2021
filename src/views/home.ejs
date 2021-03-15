@@ -4,13 +4,8 @@
 
 
 
-<% shows.data.map((key) => { %>
-    <a href="#detail/<%= key.id %>">
-    <article>
-      <img src="<%= key.attributes.posterImage.small %>}" alt="<%= key.title %>">
-      <p><%= key.attributes.titles.en_jp %></p>
-    </article>
-  </a>
+<% shows.data.map((show) => { %>
+  <%- include('partials/blockContent', {key: show} ) %> 
 <% }) %>
 
 

@@ -1,6 +1,6 @@
-<a href="#detail/${show.id}">
+<a href="#detail/<%= key.id %>">
   <article>
-    <img src="${show.attributes.posterImage.small}" alt="${show.title}">
-    <p>${title}</p>
+    <img src="<%= key.attributes.posterImage.small %>}" alt="<%= key.title %>">
+    <p><%= key.attributes.titles.en_jp %></p>
   </article>
 </a>
