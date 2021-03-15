@@ -1,6 +1,17 @@
 <%- include('partials/head') %>
 <%- include('partials/header.ejs') %>
-<h1><%= title %> </h1>
-<img src="static/test.png">
+<!-- <img src="static/test.png"> -->
+
+
+
+<% shows.data.map((key) => { %>
+    <a href="#detail/<%= key.id %>">
+    <article>
+      <img src="<%= key.attributes.posterImage.small %>}" alt="<%= key.title %>">
+      <p><%= key.attributes.titles.en_jp %></p>
+    </article>
+  </a>
+<% }) %>
+
 
 <% include('partials/footer.ejs') %> 
