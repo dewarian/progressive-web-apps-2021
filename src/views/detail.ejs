@@ -1,0 +1,11 @@
+<%- include('partials/head') %>
+<%- include('partials/header.ejs') %>
+
+
+
+<% info.data.map((show) => { %>
+  <%- include('partials/detailShow', {key: show} ) %> 
+<% }) %>
+
+
+<% include('partials/footer.ejs') %> 
