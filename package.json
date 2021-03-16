@@ -12,7 +12,8 @@
     "cleanup": "run-s lint pretty",
     "prebuild": "rimraf ./dist && mkdirp dist",
     "build": "run-p build:**",
-    "build:css": "node scripts/build-css.js"
+    "build:css": "node scripts/build-css.js",
+    "xbuild:html": "node scripts/build-html.js"
   },
   "repository": {
     "type": "git",
