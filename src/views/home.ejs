@@ -1,12 +1,12 @@
 <%- include('partials/head') %>
-<%- include('partials/header.ejs') %>
+<%- include('partials/header') %>
 <!-- <img src="static/test.png"> -->
 
 
 
 <% shows.data.map((show) => { %>
-  <%- include('partials/blockContent', {key: show} ) %> 
+  <%- include('./partials/blockContent', {key: show} ) %> 
 <% }) %>
 
 
-<% include('partials/footer.ejs') %> 
+<% include('./partials/footer') %> 
