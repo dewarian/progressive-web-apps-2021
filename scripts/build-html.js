@@ -43,8 +43,8 @@ function renderTemplate(templatePath, data) {
   const template = fs.readFileSync(templatePath, "utf8").toString();
   return ejs.render(template, data, {
     views: [
-      path.join(__dirname, "./src/", "views"),
-      path.join(__dirname, "./views/", "partials")
+      path.join(__dirname, "../", "src/", "views"),
+      path.join(__dirname, "../", "views/", "partials")
     ]
   });
 }
