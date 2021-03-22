@@ -3,7 +3,7 @@
   "name": "Kitsu current release list",
   "description": "Information about the latest anime shows",
   "icons": [{
-    "src": "/src/static/kitsu.png",
+    "src": "/kitsu.png",
     "type": "image/png",
     "sizes": "256x256"
   }],
