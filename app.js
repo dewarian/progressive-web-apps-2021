@@ -1,13 +1,16 @@
 const express = require("express");
-const { getData } = require("./src/modules/handling-data");
+const { getData } = require("./modules/handling-data");
+const compression = require("compression");
 const app = express();
 const port = process.env.PORT || 8080;
 
 app.set("view engine", "ejs");
-app.set("views", "src/views");
+app.set("views", "views");
 
 // Custom path for static files
-app.use("/static", express.static("src/static"));
+app.use(express.static(__dirname + "/public"));
+// Compress all responses
+app.use(compression({ level: 9 }));
 
 /**
  * Ugly global scope variables. Build step would be to refactor these in a block scope
@@ -17,7 +20,7 @@ const year = 2021;
 const season = "winter";
 const pageLimit = "20";
 const offSet = "page[offset]=";
-const url = `${baseUrl}?filter[seasonYear]=${year}&[season]=${season}&page[limit]=${pageLimit}&${offSet}40`;
+const url = `${baseUrl}?filter[seasonYear]=${year}&[season]=${season}&page[limit]=${pageLimit}&${offSet}20`;
 
 /**
  * Routers
