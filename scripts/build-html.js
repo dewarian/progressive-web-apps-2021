@@ -20,13 +20,13 @@ function generateHomePage() {
   fetch(
     `${baseUrl}?filter[seasonYear]=${year}&[season]=${season}&page[limit]=${pageLimit}&${offSet}40`
   ).then(async (response) => {
-    const animeData = await response.json();
+    const shows = await response.json();
     const data = {
       pageTitle: "Winter 2021 Shows",
-      animeData
+      shows
     };
 
-    const html = renderTemplate("src/views/home.ejs", data);
+    const html = renderTemplate("views/home.ejs", data);
     writeFile("./dist", "index.html", html);
   });
 }
@@ -43,7 +43,7 @@ function renderTemplate(templatePath, data) {
   const template = fs.readFileSync(templatePath, "utf8").toString();
   return ejs.render(template, data, {
     views: [
-      path.join(__dirname, "../", "src/", "views"),
+      path.join(__dirname, "../", "views"),
       path.join(__dirname, "../", "views/", "partials")
     ]
   });
