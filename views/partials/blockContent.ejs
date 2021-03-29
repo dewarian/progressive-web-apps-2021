@@ -1,6 +1,6 @@
 <a href="detail/<%= key.id %>">
   <article>
-    <img src="<%= key.attributes.posterImage.small %>}" alt="<%= key.title %>">
+    <img src="<%= key.attributes.posterImage.medium %>}" alt="<%= key.title %>">
     <%if (key.attributes.titles.en_jp === undefined) { %>
       <p class="overflow"><%= key.attributes.titles.en_cn %></p>
     <% } else { %>
