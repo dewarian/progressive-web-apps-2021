@@ -1,7 +1,12 @@
 <article id="detail">
   <section>
-    <img src="<%= info.attributes.posterImage.small %>" alt="">
-    <p><%= info.attributes.titles.en_jp %></p>
+    <%if (info.attributes.titles.en_jp === undefined) { %>
+      <img src="<%= info.attributes.posterImage.small %>" alt=" <%= info.attributes.titles.en_cn %>">
+      <p><%= info.attributes.titles.en_cn %></p>
+    <% } else { %>
+      <img src="<%= info.attributes.posterImage.small %>" alt=" <%= info.attributes.titles.en_jp %>">
+      <p><%= info.attributes.titles.en_jp %></p>
+    <% } %>
   </section>
   <section>
     <p><%= info.attributes.description %></p>
