@@ -6,9 +6,11 @@ const fetch = require("node-fetch");
 // ---
 
 generateHomePage();
+generateDetailPages();
 
 /**
- *
+ * @title generateHomePage()
+ * @description Function renders a static HTML version of the homepage.
  */
 function generateHomePage() {
   const baseUrl = "https://kitsu.io/api/edge/anime";
@@ -28,6 +30,37 @@ function generateHomePage() {
 
     const html = renderTemplate("views/home.ejs", data);
     writeFile("./dist", "index.html", html);
+  });
+}
+
+/**
+ * @title generateDetailPages
+ * @description Renders a detailpage for every anime
+ */
+function generateDetailPages() {
+  const baseUrl = "https://kitsu.io/api/edge/anime";
+  const year = 2021;
+  const season = "winter";
+  const pageLimit = "20";
+  const offSet = "page[offset]=";
+
+  fetch(
+    `${baseUrl}?filter[seasonYear]=${year}&[season]=${season}&page[limit]=${pageLimit}&${offSet}40`
+  ).then(async (response) => {
+    const info = await response.json();
+
+    info.data.forEach((anime) => {
+      Promise.all([
+        fetch(`${baseUrl}/${anime.id}`).then((response) => response.json())
+      ]).then(([details]) => {
+        const data = {
+          pageTitle: details.data.attributes.titles.en_jp,
+          info: details.data
+        };
+        const html = renderTemplate("./views/detail.ejs", data);
+        writeFile(`./dist/shows/${anime.id}`, "index.html", html);
+      });
+    });
   });
 }
 
