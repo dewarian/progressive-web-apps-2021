@@ -2,8 +2,10 @@ const express = require("express");
 const { getData } = require("./modules/handling-data");
 const compression = require("compression");
 const app = express();
-const port = process.env.PORT || 8080;
-
+// const port = process.env.PORT || 8080;
+const config = {
+  port: process.env.PORT || 3000
+};
 app.set("view engine", "ejs");
 app.set("views", "views");
 
@@ -43,15 +45,15 @@ app.get("/detail/:id", async (req, res) => {
   const dataset = await getData(`${baseUrl}/${showId}`);
   // console.log(dataset);
   const title =
-    dataset.data.attributes.titles.en_jp === undefined
-      ? dataset.data.attributes.titles.en_cn
-      : dataset.data.attributes.titles.en_en;
+    (await dataset.data.attributes.titles.en_jp) === undefined
+      ? await dataset.data.attributes.titles.en_cn
+      : await dataset.data.attributes.titles.en_en;
   res.render("detail", {
     pageTitle: title,
     info: dataset.data
   });
 });
 
-app.listen(port, () => {
-  console.log(`App listening at http://localhost:${port}`);
+app.listen(config.port, () => {
+  console.log(`App listening at http://localhost:${config.port}`);
 });
