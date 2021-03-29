@@ -3,7 +3,6 @@ const fs = require("fs");
 const fsPromise = fs.promises;
 const path = require("path");
 const fetch = require("node-fetch");
-// ---
 
 generateHomePage();
 generateDetailPages();
@@ -58,7 +57,7 @@ function generateDetailPages() {
           info: details.data
         };
         const html = renderTemplate("./views/detail.ejs", data);
-        writeFile(`./dist/shows/${anime.id}`, "index.html", html);
+        writeFile(`./dist/detail/${anime.id}`, "index.html", html);
       });
     });
   });
