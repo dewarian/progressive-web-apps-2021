@@ -1,12 +1,43 @@
-const cacheVersion = "caching-v1";
-const cacheURLs = ["index.html"];
+const cacheVersion = "v1";
+const cacheURLs = [
+  "/",
+  "css/var.css",
+  "css/reset.css",
+  "css/nav.css",
+  "css/index.css",
+  "fonts/SpaceMono-Regular.ttf",
+  "offline"
+];
 
-self.addEventListener("install", async (e) => {
-  console.log(`Service Worker: Installed`);
-  caches.open(cacheVersion).then((cache) => {
-    return cache.add("/index.html");
-  });
-  return self.skipWaiting();
+self.addEventListener("install", (e) => {
+  console.log(`Service Worker: kitsu-${cacheVersion} Installing.`);
+  e.waitUntil(
+    caches.open(`kitsu-${cacheVersion}`).then((cache) => {
+      return cache.addAll(cacheURLs);
+    })
+  );
+});
+
+self.addEventListener("activate", (e) => {
+  console.log(`kitsu-${cacheVersion} available`);
+});
+
+self.addEventListener("fetch", (e) => {
+  e.respondWith(
+    caches
+      .open(`kitsu-${cacheVersion}`)
+      .then(async (cache) => {
+        const res = await cache.match(e.request);
+        if (res) {
+          return res;
+        }
+        return fetch(e.request, res.clone());
+      })
+      .catch(async (e) => {
+        const cache = await caches.open(`kitsu-${cacheVersion}`);
+        return await cache.match("/offline");
+      })
+  );
 });
 
 // self.addEventListener("activate", () => {});

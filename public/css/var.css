@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Space Mono";
-  src: url("/public/fonts/SpaceMono-Regular.ttf") format("truetype");
+  src: url("../fonts/SpaceMono-Regular.ttf") format("truetype");
 }
-
+/* ../public/fonts/SpaceMono-Regular.ttf */
 :root {
   --font-main: "Space Mono", helvetica, monospace;
   --main-accent: #ffcc00;
