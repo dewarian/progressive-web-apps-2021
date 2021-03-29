@@ -1,7 +1,12 @@
 const copy = require("copy");
 
 copy(
-  ["./public/*.js", "./public/*.json", "./public/kitsu.png"],
+  [
+    "./public/*.js",
+    "./public/*.json",
+    "./public/kitsu.png",
+    ".public/fonts/SpaceMono-Regular.ttf"
+  ],
   "dist",
   function (err, files) {
     if (err) {
