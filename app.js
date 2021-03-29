@@ -52,6 +52,12 @@ app.get("/detail/:id", async (req, res) => {
   });
 });
 
+app.get("/offline", (req, res) => {
+  res.render("offline", {
+    pageTitle: "Offline"
+  });
+});
+
 app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`);
 });
