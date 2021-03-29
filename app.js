@@ -2,10 +2,8 @@ const express = require("express");
 const { getData } = require("./modules/handling-data");
 const compression = require("compression");
 const app = express();
-// const port = process.env.PORT || 8080;
-const config = {
-  port: process.env.PORT || 3000
-};
+const port = process.env.PORT || 8080;
+
 app.set("view engine", "ejs");
 app.set("views", "views");
 
@@ -54,6 +52,6 @@ app.get("/detail/:id", async (req, res) => {
   });
 });
 
-app.listen(config.port, () => {
-  console.log(`App listening at http://localhost:${config.port}`);
+app.listen(port, () => {
+  console.log(`App listening at http://localhost:${port}`);
 });
