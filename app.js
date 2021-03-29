@@ -43,9 +43,9 @@ app.get("/detail/:id", async (req, res) => {
   const dataset = await getData(`${baseUrl}/${showId}`);
   // console.log(dataset);
   const title =
-    (await dataset.data.attributes.titles.en_jp) === undefined
-      ? await dataset.data.attributes.titles.en_cn
-      : await dataset.data.attributes.titles.en_en;
+    dataset.data.attributes.titles.en_jp === undefined
+      ? dataset.data.attributes.titles.en_cn
+      : dataset.data.attributes.titles.en_en;
   res.render("detail", {
     pageTitle: title,
     info: dataset.data
