@@ -66,6 +66,10 @@ main a:hover {
   box-shadow: 0.3rem 0.3rem #00000050;
 }
 
+a article img {
+  max-width: 284px;
+}
+
 main article p {
   max-width: 284px;
   /* height: 4.4em;
