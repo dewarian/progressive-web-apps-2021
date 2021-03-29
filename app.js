@@ -42,8 +42,12 @@ app.get("/detail/:id", async (req, res) => {
   const showId = req.params.id;
   const dataset = await getData(`${baseUrl}/${showId}`);
   // console.log(dataset);
+  const title =
+    dataset.data.attributes.titles.en_jp === undefined
+      ? dataset.data.attributes.titles.en_cn
+      : dataset.data.attributes.titles.en_en;
   res.render("detail", {
-    pageTitle: dataset.data.attributes.titles.en_jp,
+    pageTitle: title,
     info: dataset.data
   });
 });

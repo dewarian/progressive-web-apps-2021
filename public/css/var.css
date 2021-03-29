@@ -3,4 +3,5 @@
 :root {
   --font-main: "Space Mono", monospace;
   --main-accent: #ffcc00;
+  --lh: 1.4rem;
 }
