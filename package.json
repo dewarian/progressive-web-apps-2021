@@ -13,6 +13,7 @@
     "prebuild": "rimraf ./dist && mkdirp dist",
     "build": "run-p build:**",
     "build:css": "node scripts/build-css.js",
+    "build:static": "node scripts/build-static.js",
     "build:html": "node scripts/build-html.js"
   },
   "repository": {
@@ -39,6 +40,7 @@
   },
   "devDependencies": {
     "clean-css": "^5.1.1",
+    "copy": "^0.3.2",
     "eslint": "^7.21.0",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.1.0",
