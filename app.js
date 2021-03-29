@@ -41,7 +41,7 @@ app.get("/", async (req, res) => {
 app.get("/detail/:id", async (req, res) => {
   const showId = req.params.id;
   const dataset = await getData(`${baseUrl}/${showId}`);
-  console.log(dataset);
+  // console.log(dataset);
   res.render("detail", {
     pageTitle: dataset.data.attributes.titles.en_jp,
     info: dataset.data

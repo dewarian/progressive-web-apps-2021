@@ -44,7 +44,7 @@ function generateDetailPages() {
   const offSet = "page[offset]=";
 
   fetch(
-    `${baseUrl}?filter[seasonYear]=${year}&[season]=${season}&page[limit]=${pageLimit}&${offSet}40`
+    `${baseUrl}?filter[seasonYear]=${year}&[season]=${season}&page[limit]=${pageLimit}&${offSet}20`
   ).then(async (response) => {
     const info = await response.json();
 
