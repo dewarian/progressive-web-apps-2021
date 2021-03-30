@@ -2,11 +2,16 @@
   "short_name": "Kitsu",
   "name": "Kitsu current release list",
   "description": "Information about the latest anime shows",
-  "icons": [
-    {
-      "src": "/kitsu.png",
+  "icons": [{
+      "src": "img/kitsu.png",
       "type": "image/png",
-      "sizes": "256x256"
+      "sizes": "256x256",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/kitsu-large.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "display": "standalone",
