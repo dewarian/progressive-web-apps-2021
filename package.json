@@ -14,7 +14,8 @@
     "build": "run-p build:**",
     "build:css": "node scripts/build-css.js",
     "build:static": "node scripts/build-static.js",
-    "build:html": "node scripts/build-html.js"
+    "build:html": "node scripts/build-html.js",
+    "postbuild": "node scripts/build-post.js"
   },
   "repository": {
     "type": "git",
