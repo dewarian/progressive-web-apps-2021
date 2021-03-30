@@ -63,6 +63,7 @@ This project could benefit more from the following features/ optimalisations.
 - Caching the detailpages and images
   - Currently it doesn't cache the detailpages and thus not update the cache to potentionally navigate through the application.
   - Images that are requested over the network aren't cached on fetch.
+- Lazy loading, this way only the content within the viewport loads and when scrolling the rest.
 
 ## INSTALLATION
 
