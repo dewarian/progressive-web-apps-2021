@@ -25,37 +25,6 @@ self.addEventListener("activate", (e) => {
   console.log(`kitsu-${cacheVersion} available`);
 });
 
-// self.addEventListener("fetch", (e) => {
-//   // console.log("neet", e.request.url);
-//   e.respondWith(
-//     fetch(e.request)
-//       .then((response) => {
-//         const rs = response.clone();
-//         caches.open(`kitsu-${cacheVersion}`).then((cache) => {
-//           cache.put(e.request, rs);
-//         });
-//         return response;
-//       })
-//       .catch(() => {
-//         let isOffline = true;
-//         if (e.request.method === "GET") {
-//           caches.open(`kitsu-${cacheVersion}`).then((c) => {
-//             c.keys().then((r) => {
-//               r.forEach((p) => {
-//                 if (p.url.includes(e.request.url)) {
-//                   isOffline = false;
-//                 }
-//               });
-//             });
-//           });
-//         }
-//         if (isOffline) {
-//           return caches.match(e.request.url);
-//         }
-//       })
-//   );
-// });
-
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches
@@ -71,4 +40,3 @@ self.addEventListener("fetch", (event) => {
       })
   );
 });
-// check cache => on false make network request => on false return offline page
