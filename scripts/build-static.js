@@ -1,12 +1,7 @@
 const copy = require("copy");
 
 copy(
-  [
-    "./public/*.js",
-    "./public/*.json",
-    "./public/kitsu.png",
-    ".public/fonts/SpaceMono-Regular.ttf"
-  ],
+  ["./public/*.js", "./public/*.json", "./public/kitsu.png"],
   "dist",
   function (err, files) {
     if (err) {
@@ -16,3 +11,11 @@ copy(
     }
   }
 );
+
+copy(["./public/fonts/*"], "dist/fonts", (err, files) => {
+  if (err) {
+    throw err;
+  } else {
+    console.log(`copied fonts`);
+  }
+});
