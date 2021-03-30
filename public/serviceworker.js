@@ -1,9 +1,12 @@
 const cacheVersion = "v1";
 const cacheURLs = [
   "/",
-  "dist/css/index.css",
-  "dist/fonts/SpaceMono-Regular.ttf",
-  "dist/offline"
+  "css/var.css",
+  "css/reset.css",
+  "css/nav.css",
+  "css/index.css",
+  "fonts/SpaceMono-Regular.ttf",
+  "offline"
 ];
 
 self.addEventListener("install", (e) => {
