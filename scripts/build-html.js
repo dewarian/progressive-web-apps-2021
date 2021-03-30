@@ -6,6 +6,16 @@ const fetch = require("node-fetch");
 
 generateHomePage();
 generateDetailPages();
+generateOffline();
+
+/**
+ *
+ */
+function generateOffline() {
+  const data = { pageTitle: "Offline" };
+  const html = renderTemplate("views/offline.ejs", data);
+  writeFile("./dist", "offline.html", html);
+}
 
 /**
  * @title generateHomePage()
