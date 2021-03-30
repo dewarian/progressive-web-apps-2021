@@ -21,17 +21,48 @@
 
 [@cmda-minor-web progressive-web-app-2021](https://github.com/cmda-minor-web/progressive-web-apps-2021)
 
-### Week 1 Refactor to serverside
+Web-App-From-Scratch turned into a Progressive Web App (PWA). Using build scripts and enhancements to make the application faster and easier accessible for devices or places where the internet isn't as reliable.
 
-Goal: Render web pages server side
+| Shorthand | Meaning                 |
+| :-------- | :---------------------- |
+| **FOIT**  | Flash of Invisible Text |
+| **TTFB**  | Time To First Byte      |
+| **TTI**   | Time to Interactive     |
 
-### Week 2 Progressive Web App
+### Service Worker
 
-Goals: Convert application to a Progressive Web App
+The caching strategy for this small application would be **Cache First, network fallback**. The PWA first loads the cached CSS, HTML, and JS, if possible bypassing the network. If the content isn't available the service worker returns a response from the network.
 
-### Week 3 Critical Rendering Path 📉
+This is ideal for this use case as the application has resources that rarely change _(Think about resources such as images and text)_.
 
-Goals: Optimize the Critical Rendering Path
+| Before sw                    | After sw                     |
+| ---------------------------- | ---------------------------- |
+| **42** requests              | **53** requests              |
+| **1.0** MB transferred       | **1.3** kB transferred       |
+| **1.2** MB resources         | **1.9** MB resources         |
+| Finish: **1.96** s           | Finish: **1.25** s           |
+| DOMContentLoaded: **750** ms | DOMContentLoaded: **128** ms |
+| Load: **902** ms             | Load: **220** ms             |
+
+<sub>(Statistics are taken from heroku via Chrome Dev Tools, no throttle, desktop)</sub>
+
+### Must Haves
+
+The following enhancements have been done to make the responses as small as possible.
+
+- Compress responses with compression middleware.
+- Minify CSS
+- Minimize amount of network requests by loading static files locally such as fonts and images.
+
+### Could Haves
+
+This project could benefit more from the following features/ optimalisations.
+
+- Using the prerendered variant with the service worker to optimalize download sizes even further.
+  - Issue is tha the paths aren't the same for the heroku deployed variant. This causes the serviceworker to error and thus not register anything in the cache [static served variant](https://progressive-web-apps-2021-one.vercel.app/).
+- Caching the detailpages and images
+  - Currently it doesn't cache the detailpages and thus not update the cache to potentionally navigate through the application.
+  - Images that are requested over the network aren't cached on fetch.
 
 ## INSTALLATION
 
@@ -63,17 +94,19 @@ Dependencies that the application needs to function.
 - [Express](http://expressjs.com/) A minimalistic unopinionated web framework for Node.js
 - [EJS](https://ejs.co/) 'Embedded JavaScript Templating' template language of choice.
 - [Node-fetch]() Node version of the fetch web-API.
+- [Compression](https://www.npmjs.com/package/compression) Nodejs Middleware, compresses response bodies based on options given.
 
 **DevDependencies**
 Dependencies used for development and aren't needed for the finished product.
 
 - [Clean-CSS](https://www.npmjs.com/package/clean-css) CSS optimizer for Node.
+- [Copy](https://www.npmjs.com/package/copy) Node command to run `cp` command across all systems.
 - [Eslint + config / plugin](https://github.com/eslint/eslint) Linting that watches code patterns, and enforces those.
 - [Mkdirp](https://www.npmjs.com/package/mkdirp) `mkdir` for Node.
 - [Nodemon](https://www.npmjs.com/package/nodemon) Package that automatically restarts node.
 - [NPM-run-all](https://www.npmjs.com/package/npm-run-all) Running scripts parallel or sequential, allows for cleaner scripts.
 - [Prettier](https://github.com/prettier/prettier) Opinionated code formatter, enforces consistent code style.
-- [rimraf](https://www.npmjs.com/package/rimraf) Node command to run `rm -rf`.
+- [Rimraf](https://www.npmjs.com/package/rimraf) Node command to run `rm -rf`.
 
 ## SCRIPTS
 
@@ -87,6 +120,8 @@ The project uses a few steps to build the application or to clean the applicatio
 |`prebuild`|Deletes dist folder, creates new dist folder.|
 |`build`|Run all scripts prefixed with build:\*\* .|
 |`build:css`|Runs script in [build-css](https://github.com/dewarian/progressive-web-apps-2021/blob/master/scripts/build-css.js). Minifies and concatenates stylesheets.|
+|`build:html`|Runs script in [build-html](https://github.com/dewarian/progressive-web-apps-2021/blob/master/scripts/build-html.js). Prerenders html pages.|
+|`build:static`|Runs script in [build-static](https://github.com/dewarian/progressive-web-apps-2021/blob/master/scripts/build-static.js). Copy static files to the dist folder. E.g. fonts, images, JS and JSON files.|
 
 ## CONVENTIONS
 
@@ -125,3 +160,4 @@ The project uses a few steps to build the application or to clean the applicatio
 
 https://shields.io/  
 https://simpleicons.org/?q=kitsu
+https://maskable.app/editor
