@@ -13,3 +13,7 @@ fs.writeFile("./dist/css/index.css", output.styles, (err) => {
   if (err) return console.log(err);
   console.log(`Finished minifying CSS in ${output.stats.timeSpent}s`);
 });
+fs.writeFile("./public/css/index.min.css", output.styles, (err) => {
+  if (err) return console.log(err);
+  console.log(`Finished minifying CSS in ${output.stats.timeSpent}s`);
+});

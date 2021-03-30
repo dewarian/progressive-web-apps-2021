@@ -1,10 +1,11 @@
-const cacheVersion = "v6";
+const cacheVersion = "v7";
 const cacheURLs = [
   "/",
   "css/var.css",
   "css/reset.css",
   "css/nav.css",
   "css/index.css",
+  "css/index.min.css",
   "fonts/SpaceMono-Regular.ttf",
   "offline",
   "img/kitsu.png",
