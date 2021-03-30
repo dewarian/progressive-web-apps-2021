@@ -1,10 +1,6 @@
 const cacheVersion = "v7";
 const cacheURLs = [
   "/",
-  "css/var.css",
-  "css/reset.css",
-  "css/nav.css",
-  "css/index.css",
   "css/index.min.css",
   "fonts/SpaceMono-Regular.ttf",
   "offline",
@@ -40,3 +36,4 @@ self.addEventListener("fetch", (event) => {
       })
   );
 });
+// check cache => on false make network request => on false return offline page

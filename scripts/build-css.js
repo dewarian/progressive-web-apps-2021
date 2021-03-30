@@ -9,7 +9,7 @@ const output = new CleanCSS({
     2: { all: false, removeDuplicateFontRules: true }
   }
 }).minify(["public/css/index.css"]);
-fs.writeFile("./dist/css/index.css", output.styles, (err) => {
+fs.writeFile("./dist/css/index.min.css", output.styles, (err) => {
   if (err) return console.log(err);
   console.log(`Finished minifying CSS in ${output.stats.timeSpent}s`);
 });
