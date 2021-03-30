@@ -1,9 +1,6 @@
 const cacheVersion = "v1";
 const cacheURLs = [
   "/",
-  "css/var.css",
-  "css/reset.css",
-  "css/nav.css",
   "css/index.css",
   "fonts/SpaceMono-Regular.ttf",
   "offline"
