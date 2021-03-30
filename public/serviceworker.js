@@ -1,11 +1,11 @@
 const cacheVersion = "v7";
 const cacheURLs = [
   "/",
-  "css/index.min.css",
-  "fonts/SpaceMono-Regular.ttf",
-  "offline",
-  "img/kitsu.png",
-  "manifest.json"
+  "/css/index.min.css",
+  "/fonts/SpaceMono-Regular.ttf",
+  "/offline",
+  "/img/kitsu.png",
+  "/manifest.json"
 ];
 
 self.addEventListener("install", (e) => {
