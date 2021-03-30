@@ -1,19 +1,23 @@
-const cacheVersion = "v7";
+const cacheVersion = "v8";
 const cacheURLs = [
   "/",
   "/css/index.min.css",
   "/fonts/SpaceMono-Regular.ttf",
-  "/offline",
   "/img/kitsu.png",
   "/manifest.json"
 ];
+const offlineURL = "/offline.html";
 
 self.addEventListener("install", (e) => {
   // console.log(`Service Worker: kitsu-${cacheVersion} Installing.`);
   e.waitUntil(
-    caches.open(`kitsu-${cacheVersion}`).then((cache) => {
-      return cache.addAll(cacheURLs);
-    })
+    Promise.all(
+      caches.open(`kitsu-${cacheVersion}`).then((cache) => {
+        cache.addAll(cacheURLs);
+        cache.add(offlineURL);
+        return console.log("cached");
+      })
+    )
   );
 });
 
@@ -32,7 +36,7 @@ self.addEventListener("fetch", (event) => {
         return fetch(event.request);
       })
       .catch((error) => {
-        return caches.match("/offline");
+        return caches.match("/offline.html");
       })
   );
 });

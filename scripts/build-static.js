@@ -22,3 +22,10 @@ copy(["./public/img/*"], "dist/img", (err, files) => {
     console.log(`copied images`);
   }
 });
+copy(["./dist/offline.html"], "public", (err, files) => {
+  if (err) {
+    throw err;
+  } else {
+    console.log(`copied offline.html`);
+  }
+});
