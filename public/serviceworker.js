@@ -36,7 +36,7 @@ self.addEventListener("fetch", (event) => {
         return fetch(event.request);
       })
       .catch((error) => {
-        return caches.match("/offline.html");
+        return caches.match(offlineURL);
       })
   );
 });
