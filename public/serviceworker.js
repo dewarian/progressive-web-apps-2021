@@ -1,4 +1,4 @@
-const cacheVersion = "v5";
+const cacheVersion = "v6";
 const cacheURLs = [
   "/",
   "css/var.css",
